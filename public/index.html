@@ -298,6 +298,132 @@
             line-height: 1.7;
         }
 
+        /* How to Pair Section */
+        .how-to-pair {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pair-intro {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin: -1.5rem 0 3rem;
+            line-height: 1.7;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .method-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+        }
+
+        .method-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
+            border-color: rgba(0, 242, 254, 0.4);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+        }
+
+        .method-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .method-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .step-list {
+            list-style: none;
+            counter-reset: step;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .step-list li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 2.6rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-list li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-list li strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .step-list li em {
+            color: var(--gray);
+            font-style: normal;
+            opacity: 0.85;
+        }
+
+        .tip-box {
+            margin-top: 2.5rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            background: rgba(0, 242, 254, 0.05);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .tip-box i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0.25rem;
+        }
+
+        .tip-box strong {
+            color: var(--light);
+        }
+
         footer {
             background: var(--darker);
             padding: 3rem 2rem 2rem;
@@ -581,6 +707,59 @@
                 </p>
             </div>
 
+        </div>
+    </section>
+
+    <!-- How to Pair Section -->
+    <section class="how-to-pair">
+        <h2 class="section-title">How to Pair Nexus-1MD</h2>
+        <p class="pair-intro">
+            Choose one of the methods below to connect your WhatsApp account.
+        </p>
+        <div class="methods-grid">
+            <!-- Method 1: QR Code -->
+            <div class="method-card">
+                <div class="method-header">
+                    <i class="fas fa-qrcode method-icon"></i>
+                    <h3 class="method-title">Method 1: Scan QR Code</h3>
+                </div>
+                <ol class="step-list">
+                    <li>Open WhatsApp on your phone.</li>
+                    <li>Go to <strong>Settings</strong> &rarr; <strong>Linked Devices</strong>.</li>
+                    <li>Tap <strong>Link a Device</strong>.</li>
+                    <li>Scan the QR code displayed on this page.</li>
+                    <li>Wait for Nexus-1MD to connect.</li>
+                </ol>
+            </div>
+
+            <!-- Method 2: Pair Code -->
+            <div class="method-card">
+                <div class="method-header">
+                    <i class="fas fa-link method-icon"></i>
+                    <h3 class="method-title">Method 2: Pair with Phone Number</h3>
+                </div>
+                <ol class="step-list">
+                    <li>
+                        Enter your WhatsApp phone number with the country code.<br>
+                        <em>Example: +254712345678</em>
+                    </li>
+                    <li>Click <strong>Get Pair Code</strong>.</li>
+                    <li>Open WhatsApp on your phone.</li>
+                    <li>Go to <strong>Settings</strong> &rarr; <strong>Linked Devices</strong>.</li>
+                    <li>Tap <strong>Link a Device</strong>.</li>
+                    <li>Select <strong>Link with phone number instead</strong>.</li>
+                    <li>Enter the pairing code shown on this page.</li>
+                    <li>Wait for Nexus-1MD to connect.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Tip -->
+        <div class="tip-box">
+            <i class="fas fa-lightbulb"></i>
+            <p>
+                <strong>Tip:</strong> Keep WhatsApp open and make sure your phone has an active internet connection while pairing. <strong>NB:</strong> If pairing fails, wait 24 hours and try again.
+            </p>
         </div>
     </section>
 
